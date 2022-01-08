@@ -1,14 +1,14 @@
-from selenium import webdriver
+# from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from selenium.common.exceptions import WebDriverException
+# from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+# from selenium.common.exceptions import WebDriverException
 from unittest import skip
 from .base import FunctionalTest
 
-import time
-import unittest
-import os
-MAX_WAIT = 10
+# import time
+# import unittest
+# import os
+# MAX_WAIT = 10
 # class FunctionalTest(StaticLiveServerTestCase):
     
 #     def setUp(self):
@@ -156,7 +156,7 @@ class ItemValidationTest(FunctionalTest):
 
          # The home page refreshes, and there is an error message saying
          # that list items cannot be blank
-        self.wait_for(lambda: self.assertEqual(self.browser.find_element_by_css_selector('.has-error').text, "You cant have an empty list of items!"))
+        self.wait_for(lambda: self.assertEqual(self.browser.find_element_by_css_selector('.has-error').text, "You can't have an empty list item"))
 
          # She tries again with some text for the item, which now works
         self.browser.find_element_by_id('id_new_item').send_keys('Buy milk')
